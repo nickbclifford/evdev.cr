@@ -20,6 +20,11 @@ class Evdev::Device
     raise Error.from_errno if @device.null?
   end
 
+  # For passing to uinput
+  protected def to_unsafe
+    @device
+  end
+
   def finalize
     with_dev(free)
   end
