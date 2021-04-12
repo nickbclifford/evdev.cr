@@ -20,6 +20,17 @@ lib LibEvdev
     Debug = 30
   end
 
+  enum ReadFlags
+    Sync = 1
+    Normal = 2
+    ForceSync = 4
+    Blocking = 8
+  end
+  enum ReadStatus
+    Success = 0
+    Sync = 1
+  end
+
   fun change_fd = libevdev_change_fd(dev : Device, fd : LibC::Int) : LibC::Int
   fun disable_event_code = libevdev_disable_event_code(dev : Device, type : LibC::UInt, code : LibC::UInt) : LibC::Int
   fun disable_event_type = libevdev_disable_event_type(dev : Device, type : LibC::UInt) : LibC::Int
@@ -77,7 +88,7 @@ lib LibEvdev
   fun kernel_set_led_values = libevdev_kernel_set_led_values(dev : Device, ...) : LibC::Int
   fun new = libevdev_new : Device
   fun new_from_fd = libevdev_new_from_fd(fd : LibC::Int, dev : Device*) : LibC::Int
-  fun next_event = libevdev_next_event(dev : Device, flags : LibC::UInt, ev : InputEvent*) : LibC::Int
+  fun next_event = libevdev_next_event(dev : Device, flags : ReadFlags, ev : InputEvent*) : LibC::Int
   fun property_from_name = libevdev_property_from_name(name : LibC::Char*) : LibC::Int
   fun property_from_name_n = libevdev_property_from_name_n(name : LibC::Char*, len : LibC::SizeT) : LibC::Int
   fun property_get_name = libevdev_property_get_name(prop : LibC::UInt) : LibC::Char*

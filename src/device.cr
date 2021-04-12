@@ -151,6 +151,22 @@ class Evdev::Device
     with_dev(get_current_slot)
   end
 
+  def event_pending?
+    if (val = with_dev(has_event_pending)) < 0
+      raise Error.from_errno
+    else
+      val == 1
+    end
+  end
+
+  def next_event(flags)
+    if (val = with_dev(next_event, flags, out event)) < 0
+      raise Error.from_errno
+    else
+      LibEvdev::ReadStatus.new(val)
+    end
+  end
+
   private macro with_dev(method, *args)
     LibEvdev.{{method}}(@device, {{*args}})
   end
