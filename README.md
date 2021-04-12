@@ -1,6 +1,11 @@
 # evdev.cr
 
-TODO: Write a description here
+Crystal bindings to [libevdev](https://www.freedesktop.org/wiki/Software/libevdev/).
+
+## Documentation
+
+As these bindings are effectively just a wrapper (i.e. minimal abstraction), behavior is identical to that described in the
+[libevdev docs](https://www.freedesktop.org/software/libevdev/doc/latest/index.html) unless otherwise specified.
 
 ## Installation
 
@@ -18,13 +23,12 @@ TODO: Write a description here
 
 ```crystal
 require "evdev"
+
+File.open("/dev/input/event0") do |file|
+  device = Evdev::Device.from_file(file)
+  puts device.name
+end
 ```
-
-TODO: Write usage instructions here
-
-## Development
-
-TODO: Write development instructions here
 
 ## Contributing
 

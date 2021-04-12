@@ -132,6 +132,7 @@ class Evdev::Device
     try_errno(set_clock_id, id)
   end
 
+  # Gets the current value of an event, returns nil if the code is not supported by the device.
   def event_value?(code : Codes::All)
     if with_dev(fetch_event_value, *pair(code), out value) == 0
       value
@@ -140,6 +141,7 @@ class Evdev::Device
     end
   end
 
+  # Gets the current value of an event, raises if the code is not supported by the device.
   def event_value(code : Codes::All)
     if value = event_value?(code)
       value
