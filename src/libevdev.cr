@@ -11,13 +11,13 @@ lib LibEvdev
     Ungrab = 4
   end
   enum LedValue
-    LedOn  = 3
-    LedOff = 4
+    On  = 3
+    Off = 4
   end
   enum LogPriority
-    LogError = 10
-    LogInfo  = 20
-    LogDebug = 30
+    Error = 10
+    Info  = 20
+    Debug = 30
   end
 
   fun change_fd = libevdev_change_fd(dev : Device, fd : LibC::Int) : LibC::Int
@@ -103,7 +103,7 @@ lib LibEvdev
   fun set_uniq = libevdev_set_uniq(dev : Device, uniq : LibC::Char*)
 
   UINPUT_OPEN_MANAGED = -2
-  
+
   fun uinput_create_from_device = libevdev_uinput_create_from_device(dev : Device, uinput_fd : LibC::Int, uinput_dev : Uinput*) : LibC::Int
   fun uinput_destroy = libevdev_uinput_destroy(uinput_dev : Uinput)
   fun uinput_get_devnode = libevdev_uinput_get_devnode(uinput_dev : Uinput) : LibC::Char*

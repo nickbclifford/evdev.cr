@@ -5,8 +5,8 @@ require "./libevdev"
 class Evdev::Device
   @device : LibEvdev::Device
 
-  def self.from_file(fd : IO::FileDescriptor)
-    if LibEvdev.new_from_fd(fd.fd, out dev) < 0
+  def self.from_file(file : IO::FileDescriptor)
+    if LibEvdev.new_from_fd(file.fd, out dev) < 0
       raise Error.from_errno
     end
     new(dev)
@@ -114,7 +114,7 @@ class Evdev::Device
   end
 
   def set_led(code, on : Bool)
-    try_errno(kernel_set_led_value, code, on ? :led_off : :led_on)
+    try_errno(kernel_set_led_value, code, on ? LibEvdev::LedValue::On : LibEvdev::LedValue::Off)
   end
 
   def set_clock_id(id)
@@ -157,7 +157,7 @@ class Evdev::Device
 
   private macro try(method, failure_msg, *args)
     if with_dev({{method}}, {{*args}}) < 0
-      raise Error.new(failure_msg)
+      raise Error.new({{failure_msg}})
     end
   end
 
