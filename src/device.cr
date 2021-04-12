@@ -140,7 +140,7 @@ class Evdev::Device
     end
   end
 
-  def event_value!(code : Codes::All)
+  def event_value(code : Codes::All)
     if value = event_value?(code)
       value
     else
@@ -160,7 +160,7 @@ class Evdev::Device
     end
   end
 
-  def slot_value!(slot, code : Codes::Abs)
+  def slot_value(slot, code : Codes::Abs)
     if value = slot_value?(code)
       value
     else
