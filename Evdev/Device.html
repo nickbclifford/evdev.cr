@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="evdev">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="evdev">
+  <title>Evdev::Device - evdev main</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          evdev
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="evdev/Evdev" data-name="evdev">
+      <a href="../Evdev.html">Evdev</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="evdev/Evdev/Codes" data-name="evdev::codes">
+      <a href="../Evdev/Codes.html">Codes</a>
+      
+        <ul>
+  
+  <li class=" " data-id="evdev/Evdev/Codes/Abs" data-name="evdev::codes::abs">
+      <a href="../Evdev/Codes/Abs.html">Abs</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/Codes/All" data-name="evdev::codes::all">
+      <a href="../Evdev/Codes/All.html">All</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/Codes/Ff" data-name="evdev::codes::ff">
+      <a href="../Evdev/Codes/Ff.html">Ff</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/Codes/FfStatus" data-name="evdev::codes::ffstatus">
+      <a href="../Evdev/Codes/FfStatus.html">FfStatus</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/Codes/Key" data-name="evdev::codes::key">
+      <a href="../Evdev/Codes/Key.html">Key</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/Codes/Led" data-name="evdev::codes::led">
+      <a href="../Evdev/Codes/Led.html">Led</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/Codes/Msc" data-name="evdev::codes::msc">
+      <a href="../Evdev/Codes/Msc.html">Msc</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/Codes/Rel" data-name="evdev::codes::rel">
+      <a href="../Evdev/Codes/Rel.html">Rel</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/Codes/Rep" data-name="evdev::codes::rep">
+      <a href="../Evdev/Codes/Rep.html">Rep</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/Codes/Snd" data-name="evdev::codes::snd">
+      <a href="../Evdev/Codes/Snd.html">Snd</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/Codes/Sw" data-name="evdev::codes::sw">
+      <a href="../Evdev/Codes/Sw.html">Sw</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/Codes/Syn" data-name="evdev::codes::syn">
+      <a href="../Evdev/Codes/Syn.html">Syn</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" current" data-id="evdev/Evdev/Device" data-name="evdev::device">
+      <a href="../Evdev/Device.html">Device</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/Error" data-name="evdev::error">
+      <a href="../Evdev/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/EventType" data-name="evdev::eventtype">
+      <a href="../Evdev/EventType.html">EventType</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/InputProperty" data-name="evdev::inputproperty">
+      <a href="../Evdev/InputProperty.html">InputProperty</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/UinputDevice" data-name="evdev::uinputdevice">
+      <a href="../Evdev/UinputDevice.html">UinputDevice</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Evdev::Device
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Evdev/Device.html">Evdev::Device</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L6" target="_blank">
+        device.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new-class-method" class="signature"><strong>.new</strong></a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#from_file(file:IO::FileDescriptor)-class-method" class="signature"><strong>.from_file</strong>(file : IO::FileDescriptor)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#axis_flat(axis:Codes::Abs)-instance-method" class="signature"><strong>#axis_flat</strong>(axis : Codes::Abs)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#axis_fuzz(axis:Codes::Abs)-instance-method" class="signature"><strong>#axis_fuzz</strong>(axis : Codes::Abs)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#axis_info(axis:Codes::Abs)-instance-method" class="signature"><strong>#axis_info</strong>(axis : Codes::Abs)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#axis_maximum(axis:Codes::Abs)-instance-method" class="signature"><strong>#axis_maximum</strong>(axis : Codes::Abs)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#axis_minimum(axis:Codes::Abs)-instance-method" class="signature"><strong>#axis_minimum</strong>(axis : Codes::Abs)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#axis_resolution(axis:Codes::Abs)-instance-method" class="signature"><strong>#axis_resolution</strong>(axis : Codes::Abs)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bus_type-instance-method" class="signature"><strong>#bus_type</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bus_type=(new_val)-instance-method" class="signature"><strong>#bus_type=</strong>(new_val)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#current_slot-instance-method" class="signature"><strong>#current_slot</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#disable_event_code(code:Codes::All)-instance-method" class="signature"><strong>#disable_event_code</strong>(code : Codes::All)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#driver_version-instance-method" class="signature"><strong>#driver_version</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#enable_event_code(code:Codes::Rep,data:Int32)-instance-method" class="signature"><strong>#enable_event_code</strong>(code : Codes::Rep, data : Int32)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#enable_event_code(code:Codes::All)-instance-method" class="signature"><strong>#enable_event_code</strong>(code : Codes::All)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#enable_event_code(code:Codes::Abs,info:LibEvdev::InputAbsinfo)-instance-method" class="signature"><strong>#enable_event_code</strong>(code : Codes::Abs, info : LibEvdev::InputAbsinfo)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#event_pending?-instance-method" class="signature"><strong>#event_pending?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#event_value(code:Codes::All)-instance-method" class="signature"><strong>#event_value</strong>(code : Codes::All)</a>
+        
+          <div class="summary"><p>Gets the current value of an event, raises if the code is not supported by the device.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#event_value?(code:Codes::All)-instance-method" class="signature"><strong>#event_value?</strong>(code : Codes::All)</a>
+        
+          <div class="summary"><p>Gets the current value of an event, returns nil if the code is not supported by the device.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#fd-instance-method" class="signature"><strong>#fd</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#fd=(fd)-instance-method" class="signature"><strong>#fd=</strong>(fd)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#finalize-instance-method" class="signature"><strong>#finalize</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#firmware_version-instance-method" class="signature"><strong>#firmware_version</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#firmware_version=(new_val)-instance-method" class="signature"><strong>#firmware_version=</strong>(new_val)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#grab(mode)-instance-method" class="signature"><strong>#grab</strong>(mode)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_event_code?(code:Codes::All)-instance-method" class="signature"><strong>#has_event_code?</strong>(code : Codes::All)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_event_type?(type:EventType)-instance-method" class="signature"><strong>#has_event_type?</strong>(type : EventType)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_property?(prop:InputProperty)-instance-method" class="signature"><strong>#has_property?</strong>(prop : InputProperty)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#kernel_id-instance-method" class="signature"><strong>#kernel_id</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#kernel_id=(new_val)-instance-method" class="signature"><strong>#kernel_id=</strong>(new_val)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#kernel_set_axis_info(axis:Codes::Abs,info)-instance-method" class="signature"><strong>#kernel_set_axis_info</strong>(axis : Codes::Abs, info)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#location-instance-method" class="signature"><strong>#location</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#location=(new_val)-instance-method" class="signature"><strong>#location=</strong>(new_val)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#name-instance-method" class="signature"><strong>#name</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#name=(new_val)-instance-method" class="signature"><strong>#name=</strong>(new_val)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#next_event(flags)-instance-method" class="signature"><strong>#next_event</strong>(flags)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#num_slots-instance-method" class="signature"><strong>#num_slots</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#product-instance-method" class="signature"><strong>#product</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#product=(new_val)-instance-method" class="signature"><strong>#product=</strong>(new_val)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_axis_flat(axis:Codes::Abs,value)-instance-method" class="signature"><strong>#set_axis_flat</strong>(axis : Codes::Abs, value)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_axis_fuzz(axis:Codes::Abs,value)-instance-method" class="signature"><strong>#set_axis_fuzz</strong>(axis : Codes::Abs, value)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_axis_info(axis:Codes::Abs,value)-instance-method" class="signature"><strong>#set_axis_info</strong>(axis : Codes::Abs, value)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_axis_maximum(axis:Codes::Abs,value)-instance-method" class="signature"><strong>#set_axis_maximum</strong>(axis : Codes::Abs, value)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_axis_minimum(axis:Codes::Abs,value)-instance-method" class="signature"><strong>#set_axis_minimum</strong>(axis : Codes::Abs, value)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_axis_resolution(axis:Codes::Abs,value)-instance-method" class="signature"><strong>#set_axis_resolution</strong>(axis : Codes::Abs, value)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_clock_id(id)-instance-method" class="signature"><strong>#set_clock_id</strong>(id)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_event_value(code:Codes::All,value)-instance-method" class="signature"><strong>#set_event_value</strong>(code : Codes::All, value)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_led(code:Codes::Led,on:Bool)-instance-method" class="signature"><strong>#set_led</strong>(code : Codes::Led, on : Bool)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_slot_value(slot,code:Codes::Abs,value)-instance-method" class="signature"><strong>#set_slot_value</strong>(slot, code : Codes::Abs, value)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#slot_value(slot,code:Codes::Abs)-instance-method" class="signature"><strong>#slot_value</strong>(slot, code : Codes::Abs)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#slot_value?(slot,code:Codes::Abs)-instance-method" class="signature"><strong>#slot_value?</strong>(slot, code : Codes::Abs)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#toggle_event_type(type:EventType,enabled:Bool)-instance-method" class="signature"><strong>#toggle_event_type</strong>(type : EventType, enabled : Bool)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#toggle_property(prop:InputProperty,enabled:Bool)-instance-method" class="signature"><strong>#toggle_property</strong>(prop : InputProperty, enabled : Bool)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#vendor-instance-method" class="signature"><strong>#vendor</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#vendor=(new_val)-instance-method" class="signature"><strong>#vendor=</strong>(new_val)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>
+
+        <a class="method-permalink" href="#new-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="from_file(file:IO::FileDescriptor)-class-method">
+      <div class="signature">
+        
+        def self.<strong>from_file</strong>(file : IO::FileDescriptor)
+
+        <a class="method-permalink" href="#from_file(file:IO::FileDescriptor)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L9" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="axis_flat(axis:Codes::Abs)-instance-method">
+      <div class="signature">
+        
+        def <strong>axis_flat</strong>(axis : <a href="../Evdev/Codes/Abs.html">Codes::Abs</a>)
+
+        <a class="method-permalink" href="#axis_flat(axis:Codes::Abs)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L113" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="axis_fuzz(axis:Codes::Abs)-instance-method">
+      <div class="signature">
+        
+        def <strong>axis_fuzz</strong>(axis : <a href="../Evdev/Codes/Abs.html">Codes::Abs</a>)
+
+        <a class="method-permalink" href="#axis_fuzz(axis:Codes::Abs)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L113" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="axis_info(axis:Codes::Abs)-instance-method">
+      <div class="signature">
+        
+        def <strong>axis_info</strong>(axis : <a href="../Evdev/Codes/Abs.html">Codes::Abs</a>)
+
+        <a class="method-permalink" href="#axis_info(axis:Codes::Abs)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L113" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="axis_maximum(axis:Codes::Abs)-instance-method">
+      <div class="signature">
+        
+        def <strong>axis_maximum</strong>(axis : <a href="../Evdev/Codes/Abs.html">Codes::Abs</a>)
+
+        <a class="method-permalink" href="#axis_maximum(axis:Codes::Abs)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L113" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="axis_minimum(axis:Codes::Abs)-instance-method">
+      <div class="signature">
+        
+        def <strong>axis_minimum</strong>(axis : <a href="../Evdev/Codes/Abs.html">Codes::Abs</a>)
+
+        <a class="method-permalink" href="#axis_minimum(axis:Codes::Abs)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L113" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="axis_resolution(axis:Codes::Abs)-instance-method">
+      <div class="signature">
+        
+        def <strong>axis_resolution</strong>(axis : <a href="../Evdev/Codes/Abs.html">Codes::Abs</a>)
+
+        <a class="method-permalink" href="#axis_resolution(axis:Codes::Abs)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L113" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bus_type-instance-method">
+      <div class="signature">
+        
+        def <strong>bus_type</strong>
+
+        <a class="method-permalink" href="#bus_type-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L55" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bus_type=(new_val)-instance-method">
+      <div class="signature">
+        
+        def <strong>bus_type=</strong>(new_val)
+
+        <a class="method-permalink" href="#bus_type=(new_val)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L55" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="current_slot-instance-method">
+      <div class="signature">
+        
+        def <strong>current_slot</strong>
+
+        <a class="method-permalink" href="#current_slot-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L181" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="disable_event_code(code:Codes::All)-instance-method">
+      <div class="signature">
+        
+        def <strong>disable_event_code</strong>(code : <a href="../Evdev/Codes/All.html">Codes::All</a>)
+
+        <a class="method-permalink" href="#disable_event_code(code:Codes::All)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L109" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="driver_version-instance-method">
+      <div class="signature">
+        
+        def <strong>driver_version</strong>
+
+        <a class="method-permalink" href="#driver_version-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L65" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="enable_event_code(code:Codes::Rep,data:Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>enable_event_code</strong>(code : <a href="../Evdev/Codes/Rep.html">Codes::Rep</a>, data : Int32)
+
+        <a class="method-permalink" href="#enable_event_code(code:Codes::Rep,data:Int32)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L101" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="enable_event_code(code:Codes::All)-instance-method">
+      <div class="signature">
+        
+        def <strong>enable_event_code</strong>(code : <a href="../Evdev/Codes/All.html">Codes::All</a>)
+
+        <a class="method-permalink" href="#enable_event_code(code:Codes::All)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L105" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="enable_event_code(code:Codes::Abs,info:LibEvdev::InputAbsinfo)-instance-method">
+      <div class="signature">
+        
+        def <strong>enable_event_code</strong>(code : <a href="../Evdev/Codes/Abs.html">Codes::Abs</a>, info : LibEvdev::InputAbsinfo)
+
+        <a class="method-permalink" href="#enable_event_code(code:Codes::Abs,info:LibEvdev::InputAbsinfo)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L97" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="event_pending?-instance-method">
+      <div class="signature">
+        
+        def <strong>event_pending?</strong>
+
+        <a class="method-permalink" href="#event_pending?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L185" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="event_value(code:Codes::All)-instance-method">
+      <div class="signature">
+        
+        def <strong>event_value</strong>(code : <a href="../Evdev/Codes/All.html">Codes::All</a>)
+
+        <a class="method-permalink" href="#event_value(code:Codes::All)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Gets the current value of an event, raises if the code is not supported by the device.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L145" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="event_value?(code:Codes::All)-instance-method">
+      <div class="signature">
+        
+        def <strong>event_value?</strong>(code : <a href="../Evdev/Codes/All.html">Codes::All</a>)
+
+        <a class="method-permalink" href="#event_value?(code:Codes::All)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Gets the current value of an event, returns nil if the code is not supported by the device.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L136" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="fd-instance-method">
+      <div class="signature">
+        
+        def <strong>fd</strong>
+
+        <a class="method-permalink" href="#fd-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L33" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="fd=(fd)-instance-method">
+      <div class="signature">
+        
+        def <strong>fd=</strong>(fd)
+
+        <a class="method-permalink" href="#fd=(fd)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L37" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="finalize-instance-method">
+      <div class="signature">
+        
+        def <strong>finalize</strong>
+
+        <a class="method-permalink" href="#finalize-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L29" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="firmware_version-instance-method">
+      <div class="signature">
+        
+        def <strong>firmware_version</strong>
+
+        <a class="method-permalink" href="#firmware_version-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L55" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="firmware_version=(new_val)-instance-method">
+      <div class="signature">
+        
+        def <strong>firmware_version=</strong>(new_val)
+
+        <a class="method-permalink" href="#firmware_version=(new_val)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L55" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="grab(mode)-instance-method">
+      <div class="signature">
+        
+        def <strong>grab</strong>(mode)
+
+        <a class="method-permalink" href="#grab(mode)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L41" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_event_code?(code:Codes::All)-instance-method">
+      <div class="signature">
+        
+        def <strong>has_event_code?</strong>(code : <a href="../Evdev/Codes/All.html">Codes::All</a>)
+
+        <a class="method-permalink" href="#has_event_code?(code:Codes::All)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L93" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_event_type?(type:EventType)-instance-method">
+      <div class="signature">
+        
+        def <strong>has_event_type?</strong>(type : <a href="../Evdev/EventType.html">EventType</a>)
+
+        <a class="method-permalink" href="#has_event_type?(type:EventType)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L81" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_property?(prop:InputProperty)-instance-method">
+      <div class="signature">
+        
+        def <strong>has_property?</strong>(prop : <a href="../Evdev/InputProperty.html">InputProperty</a>)
+
+        <a class="method-permalink" href="#has_property?(prop:InputProperty)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="kernel_id-instance-method">
+      <div class="signature">
+        
+        def <strong>kernel_id</strong>
+
+        <a class="method-permalink" href="#kernel_id-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L45" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="kernel_id=(new_val)-instance-method">
+      <div class="signature">
+        
+        def <strong>kernel_id=</strong>(new_val)
+
+        <a class="method-permalink" href="#kernel_id=(new_val)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L45" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="kernel_set_axis_info(axis:Codes::Abs,info)-instance-method">
+      <div class="signature">
+        
+        def <strong>kernel_set_axis_info</strong>(axis : <a href="../Evdev/Codes/Abs.html">Codes::Abs</a>, info)
+
+        <a class="method-permalink" href="#kernel_set_axis_info(axis:Codes::Abs,info)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L123" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="location-instance-method">
+      <div class="signature">
+        
+        def <strong>location</strong>
+
+        <a class="method-permalink" href="#location-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L45" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="location=(new_val)-instance-method">
+      <div class="signature">
+        
+        def <strong>location=</strong>(new_val)
+
+        <a class="method-permalink" href="#location=(new_val)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L45" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="name-instance-method">
+      <div class="signature">
+        
+        def <strong>name</strong>
+
+        <a class="method-permalink" href="#name-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L45" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="name=(new_val)-instance-method">
+      <div class="signature">
+        
+        def <strong>name=</strong>(new_val)
+
+        <a class="method-permalink" href="#name=(new_val)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L45" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="next_event(flags)-instance-method">
+      <div class="signature">
+        
+        def <strong>next_event</strong>(flags)
+
+        <a class="method-permalink" href="#next_event(flags)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L193" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="num_slots-instance-method">
+      <div class="signature">
+        
+        def <strong>num_slots</strong>
+
+        <a class="method-permalink" href="#num_slots-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L177" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="product-instance-method">
+      <div class="signature">
+        
+        def <strong>product</strong>
+
+        <a class="method-permalink" href="#product-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L55" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="product=(new_val)-instance-method">
+      <div class="signature">
+        
+        def <strong>product=</strong>(new_val)
+
+        <a class="method-permalink" href="#product=(new_val)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L55" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_axis_flat(axis:Codes::Abs,value)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_axis_flat</strong>(axis : <a href="../Evdev/Codes/Abs.html">Codes::Abs</a>, value)
+
+        <a class="method-permalink" href="#set_axis_flat(axis:Codes::Abs,value)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L113" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_axis_fuzz(axis:Codes::Abs,value)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_axis_fuzz</strong>(axis : <a href="../Evdev/Codes/Abs.html">Codes::Abs</a>, value)
+
+        <a class="method-permalink" href="#set_axis_fuzz(axis:Codes::Abs,value)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L113" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_axis_info(axis:Codes::Abs,value)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_axis_info</strong>(axis : <a href="../Evdev/Codes/Abs.html">Codes::Abs</a>, value)
+
+        <a class="method-permalink" href="#set_axis_info(axis:Codes::Abs,value)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L113" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_axis_maximum(axis:Codes::Abs,value)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_axis_maximum</strong>(axis : <a href="../Evdev/Codes/Abs.html">Codes::Abs</a>, value)
+
+        <a class="method-permalink" href="#set_axis_maximum(axis:Codes::Abs,value)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L113" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_axis_minimum(axis:Codes::Abs,value)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_axis_minimum</strong>(axis : <a href="../Evdev/Codes/Abs.html">Codes::Abs</a>, value)
+
+        <a class="method-permalink" href="#set_axis_minimum(axis:Codes::Abs,value)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L113" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_axis_resolution(axis:Codes::Abs,value)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_axis_resolution</strong>(axis : <a href="../Evdev/Codes/Abs.html">Codes::Abs</a>, value)
+
+        <a class="method-permalink" href="#set_axis_resolution(axis:Codes::Abs,value)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L113" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_clock_id(id)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_clock_id</strong>(id)
+
+        <a class="method-permalink" href="#set_clock_id(id)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L131" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_event_value(code:Codes::All,value)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_event_value</strong>(code : <a href="../Evdev/Codes/All.html">Codes::All</a>, value)
+
+        <a class="method-permalink" href="#set_event_value(code:Codes::All,value)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L153" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_led(code:Codes::Led,on:Bool)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_led</strong>(code : <a href="../Evdev/Codes/Led.html">Codes::Led</a>, on : Bool)
+
+        <a class="method-permalink" href="#set_led(code:Codes::Led,on:Bool)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L127" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_slot_value(slot,code:Codes::Abs,value)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_slot_value</strong>(slot, code : <a href="../Evdev/Codes/Abs.html">Codes::Abs</a>, value)
+
+        <a class="method-permalink" href="#set_slot_value(slot,code:Codes::Abs,value)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L173" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="slot_value(slot,code:Codes::Abs)-instance-method">
+      <div class="signature">
+        
+        def <strong>slot_value</strong>(slot, code : <a href="../Evdev/Codes/Abs.html">Codes::Abs</a>)
+
+        <a class="method-permalink" href="#slot_value(slot,code:Codes::Abs)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L165" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="slot_value?(slot,code:Codes::Abs)-instance-method">
+      <div class="signature">
+        
+        def <strong>slot_value?</strong>(slot, code : <a href="../Evdev/Codes/Abs.html">Codes::Abs</a>)
+
+        <a class="method-permalink" href="#slot_value?(slot,code:Codes::Abs)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L157" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="toggle_event_type(type:EventType,enabled:Bool)-instance-method">
+      <div class="signature">
+        
+        def <strong>toggle_event_type</strong>(type : <a href="../Evdev/EventType.html">EventType</a>, enabled : Bool)
+
+        <a class="method-permalink" href="#toggle_event_type(type:EventType,enabled:Bool)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L85" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="toggle_property(prop:InputProperty,enabled:Bool)-instance-method">
+      <div class="signature">
+        
+        def <strong>toggle_property</strong>(prop : <a href="../Evdev/InputProperty.html">InputProperty</a>, enabled : Bool)
+
+        <a class="method-permalink" href="#toggle_property(prop:InputProperty,enabled:Bool)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L73" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="vendor-instance-method">
+      <div class="signature">
+        
+        def <strong>vendor</strong>
+
+        <a class="method-permalink" href="#vendor-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L55" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="vendor=(new_val)-instance-method">
+      <div class="signature">
+        
+        def <strong>vendor=</strong>(new_val)
+
+        <a class="method-permalink" href="#vendor=(new_val)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/device.cr#L55" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

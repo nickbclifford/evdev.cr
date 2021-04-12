@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="evdev">
+
+
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../js/doc.js"></script>
+
+  <meta name="repository-name" content="evdev">
+  <title>Evdev::Codes::Led - evdev main</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../../index.html">
+          evdev
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="evdev/Evdev" data-name="evdev">
+      <a href="../../Evdev.html">Evdev</a>
+      
+        <ul>
+  
+  <li class="parent open current" data-id="evdev/Evdev/Codes" data-name="evdev::codes">
+      <a href="../../Evdev/Codes.html">Codes</a>
+      
+        <ul>
+  
+  <li class=" " data-id="evdev/Evdev/Codes/Abs" data-name="evdev::codes::abs">
+      <a href="../../Evdev/Codes/Abs.html">Abs</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/Codes/All" data-name="evdev::codes::all">
+      <a href="../../Evdev/Codes/All.html">All</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/Codes/Ff" data-name="evdev::codes::ff">
+      <a href="../../Evdev/Codes/Ff.html">Ff</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/Codes/FfStatus" data-name="evdev::codes::ffstatus">
+      <a href="../../Evdev/Codes/FfStatus.html">FfStatus</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/Codes/Key" data-name="evdev::codes::key">
+      <a href="../../Evdev/Codes/Key.html">Key</a>
+      
+    </li>
+  
+  <li class=" current" data-id="evdev/Evdev/Codes/Led" data-name="evdev::codes::led">
+      <a href="../../Evdev/Codes/Led.html">Led</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/Codes/Msc" data-name="evdev::codes::msc">
+      <a href="../../Evdev/Codes/Msc.html">Msc</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/Codes/Rel" data-name="evdev::codes::rel">
+      <a href="../../Evdev/Codes/Rel.html">Rel</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/Codes/Rep" data-name="evdev::codes::rep">
+      <a href="../../Evdev/Codes/Rep.html">Rep</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/Codes/Snd" data-name="evdev::codes::snd">
+      <a href="../../Evdev/Codes/Snd.html">Snd</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/Codes/Sw" data-name="evdev::codes::sw">
+      <a href="../../Evdev/Codes/Sw.html">Sw</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/Codes/Syn" data-name="evdev::codes::syn">
+      <a href="../../Evdev/Codes/Syn.html">Syn</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/Device" data-name="evdev::device">
+      <a href="../../Evdev/Device.html">Device</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/Error" data-name="evdev::error">
+      <a href="../../Evdev/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/EventType" data-name="evdev::eventtype">
+      <a href="../../Evdev/EventType.html">EventType</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/InputProperty" data-name="evdev::inputproperty">
+      <a href="../../Evdev/InputProperty.html">InputProperty</a>
+      
+    </li>
+  
+  <li class=" " data-id="evdev/Evdev/UinputDevice" data-name="evdev::uinputdevice">
+      <a href="../../Evdev/UinputDevice.html">UinputDevice</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">enum</span> Evdev::Codes::Led
+
+</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/enums.cr#L772" target="_blank">
+        enums.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="enum-members" class="anchor" href="#enum-members">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Enum Members
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="Numl">
+        <strong>Numl</strong> = <code><span class="n">0</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Capsl">
+        <strong>Capsl</strong> = <code><span class="n">1</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Scrolll">
+        <strong>Scrolll</strong> = <code><span class="n">2</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Compose">
+        <strong>Compose</strong> = <code><span class="n">3</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Kana">
+        <strong>Kana</strong> = <code><span class="n">4</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Sleep">
+        <strong>Sleep</strong> = <code><span class="n">5</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Suspend">
+        <strong>Suspend</strong> = <code><span class="n">6</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Mute">
+        <strong>Mute</strong> = <code><span class="n">7</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Misc">
+        <strong>Misc</strong> = <code><span class="n">8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Mail">
+        <strong>Mail</strong> = <code><span class="n">9</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Charging">
+        <strong>Charging</strong> = <code><span class="n">10</span></code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#capsl?-instance-method" class="signature"><strong>#capsl?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#charging?-instance-method" class="signature"><strong>#charging?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#compose?-instance-method" class="signature"><strong>#compose?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#kana?-instance-method" class="signature"><strong>#kana?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mail?-instance-method" class="signature"><strong>#mail?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#misc?-instance-method" class="signature"><strong>#misc?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mute?-instance-method" class="signature"><strong>#mute?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#numl?-instance-method" class="signature"><strong>#numl?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#scrolll?-instance-method" class="signature"><strong>#scrolll?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sleep?-instance-method" class="signature"><strong>#sleep?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#suspend?-instance-method" class="signature"><strong>#suspend?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#type-instance-method" class="signature"><strong>#type</strong></a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="capsl?-instance-method">
+      <div class="signature">
+        
+        def <strong>capsl?</strong>
+
+        <a class="method-permalink" href="#capsl?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/enums.cr#L774" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="charging?-instance-method">
+      <div class="signature">
+        
+        def <strong>charging?</strong>
+
+        <a class="method-permalink" href="#charging?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/enums.cr#L783" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="compose?-instance-method">
+      <div class="signature">
+        
+        def <strong>compose?</strong>
+
+        <a class="method-permalink" href="#compose?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/enums.cr#L776" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="kana?-instance-method">
+      <div class="signature">
+        
+        def <strong>kana?</strong>
+
+        <a class="method-permalink" href="#kana?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/enums.cr#L777" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mail?-instance-method">
+      <div class="signature">
+        
+        def <strong>mail?</strong>
+
+        <a class="method-permalink" href="#mail?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/enums.cr#L782" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="misc?-instance-method">
+      <div class="signature">
+        
+        def <strong>misc?</strong>
+
+        <a class="method-permalink" href="#misc?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/enums.cr#L781" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mute?-instance-method">
+      <div class="signature">
+        
+        def <strong>mute?</strong>
+
+        <a class="method-permalink" href="#mute?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/enums.cr#L780" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="numl?-instance-method">
+      <div class="signature">
+        
+        def <strong>numl?</strong>
+
+        <a class="method-permalink" href="#numl?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/enums.cr#L773" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="scrolll?-instance-method">
+      <div class="signature">
+        
+        def <strong>scrolll?</strong>
+
+        <a class="method-permalink" href="#scrolll?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/enums.cr#L775" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sleep?-instance-method">
+      <div class="signature">
+        
+        def <strong>sleep?</strong>
+
+        <a class="method-permalink" href="#sleep?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/enums.cr#L778" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="suspend?-instance-method">
+      <div class="signature">
+        
+        def <strong>suspend?</strong>
+
+        <a class="method-permalink" href="#suspend?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/enums.cr#L779" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="type-instance-method">
+      <div class="signature">
+        
+        def <strong>type</strong>
+
+        <a class="method-permalink" href="#type-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/a85d32dcd7ab017bc6f7c4d20eda5ea9c02ba039/src/enums.cr#L785" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
