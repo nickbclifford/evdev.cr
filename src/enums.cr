@@ -42,20 +42,20 @@ module Evdev
       end
     end
 
+    # Enum members cannot start with a number, so any members that otherwise would have Key prepended.
     enum Key
-      Reserved = 0
-      Esc      = 1
-      # Enum members cannot start with a number, so these have Digit prepended
-      Digit1                  =   2
-      Digit2                  =   3
-      Digit3                  =   4
-      Digit4                  =   5
-      Digit5                  =   6
-      Digit6                  =   7
-      Digit7                  =   8
-      Digit8                  =   9
-      Digit9                  =  10
-      Digit0                  =  11
+      Reserved                =   0
+      Esc                     =   1
+      Key1                    =   2
+      Key2                    =   3
+      Key3                    =   4
+      Key4                    =   5
+      Key5                    =   6
+      Key6                    =   7
+      Key7                    =   8
+      Key8                    =   9
+      Key9                    =  10
+      Key0                    =  11
       Minus                   =  12
       Equal                   =  13
       Backspace               =  14
@@ -129,7 +129,7 @@ module Evdev
       Kp0                     =  82
       Kpdot                   =  83
       Zenkakuhankaku          =  85
-      Key102nd                =  86 # ditto as above
+      Key102nd                =  86
       F11                     =  87
       F12                     =  88
       Ro                      =  89
@@ -429,7 +429,7 @@ module Evdev
       Shuffle                 = 0x19a
       Break                   = 0x19b
       Previous                = 0x19c
-      Digits                  = 0x19d
+      Keys                    = 0x19d
       Teen                    = 0x19e
       Twen                    = 0x19f
       Videophone              = 0x1a0
@@ -457,8 +457,8 @@ module Evdev
       Frameforward            = 0x1b5
       ContextMenu             = 0x1b6
       MediaRepeat             = 0x1b7
-      Key10channelsup         = 0x1b8 # ditto
-      Key10channelsdown       = 0x1b9 # ditto
+      Key10channelsup         = 0x1b8
+      Key10channelsdown       = 0x1b9
       Images                  = 0x1ba
       NotificationCenter      = 0x1bc
       PickupPhone             = 0x1bd
