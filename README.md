@@ -2,6 +2,8 @@
 
 Crystal bindings to [libevdev](https://www.freedesktop.org/wiki/Software/libevdev/).
 
+[**API Documentation**](https://nickbclifford.github.io/evdev.cr/)
+
 ## Documentation
 
 As these bindings are effectively just a wrapper (i.e. minimal abstraction), behavior is identical to that described in the
