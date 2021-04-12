@@ -6,4 +6,7 @@ authors:
 
 crystal: 1.0.0
 
+libraries:
+  libevdev: ">= 1.10.0"
+
 license: MIT
