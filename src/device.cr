@@ -1,4 +1,5 @@
 require "errno"
+require "./enums"
 require "./error"
 require "./libevdev"
 
@@ -65,11 +66,11 @@ class Evdev::Device
     with_dev(get_driver_version)
   end
 
-  def has_property?(prop)
+  def has_property?(prop : InputProperty)
     with_dev(has_property, prop) == 1
   end
 
-  def toggle_property(prop, enabled : Bool)
+  def toggle_property(prop : InputProperty, enabled : Bool)
     if enabled
       try(enable_property, "Unable to enable property #{prop}", prop)
     else
@@ -77,11 +78,11 @@ class Evdev::Device
     end
   end
 
-  def has_event_type?(type)
+  def has_event_type?(type : EventType)
     with_dev(has_event_type, type) == 1
   end
 
-  def toggle_event_type(type, enabled : Bool)
+  def toggle_event_type(type : EventType, enabled : Bool)
     if enabled
       try(enable_event_type, "Unable to enable event type #{type}", type)
     else
@@ -89,31 +90,41 @@ class Evdev::Device
     end
   end
 
-  def has_event_code?(type, code)
-    with_dev(has_event_code, type, code) == 1
+  def has_event_code?(code : Codes::All)
+    with_dev(has_event_code, *pair(code)) == 1
   end
 
-  # TODO: enable event code
+  def enable_event_code(code : Codes::Abs, info : LibEvdev::InputAbsinfo)
+    try(enable_event_code, "Unable to enable event #{code.type} #{code}", *pair(code), Box.box(info))
+  end
 
-  def disable_event_code(type, code)
-    try(disable_event_code, "Unable to disable event code #{type} #{code}", type, code)
+  def enable_event_code(code : Codes::Rep, data : Int32)
+    try(enable_event_code, "Unable to enable event #{code.type} #{code}", *pair(code), Box.box(data))
+  end
+
+  def enable_event_code(code : Codes::All)
+    try(enable_event_code, "Unable to enable event #{code.type} #{code}", *pair(code), Pointer(Void).null)
+  end
+
+  def disable_event_code(code : Codes::All)
+    try(disable_event_code, "Unable to disable event #{code.type} #{type} #{code}", *pair(code))
   end
 
   {% for name in %w(minimum maximum fuzz flat resolution info) %}
-    def axis_{{name.id}}(axis)
+    def axis_{{name.id}}(axis : Codes::Abs)
       with_dev(get_abs_{{name.id}}, axis)
     end
 
-    def set_axis_{{name.id}}(axis, value)
+    def set_axis_{{name.id}}(axis : Codes::Abs, value)
       with_dev(set_abs_{{name.id}}, axis, value)
     end
   {% end %}
 
-  def kernel_set_axis_info(axis, info)
+  def kernel_set_axis_info(axis : Codes::Abs, info)
     try_errno(kernel_set_abs_info, axis, info)
   end
 
-  def set_led(code, on : Bool)
+  def set_led(code : Codes::Led, on : Bool)
     try_errno(kernel_set_led_value, code, on ? LibEvdev::LedValue::On : LibEvdev::LedValue::Off)
   end
 
@@ -121,27 +132,45 @@ class Evdev::Device
     try_errno(set_clock_id, id)
   end
 
-  {% for kind, param in {event: "type", slot: "slot"} %}
-    def {{kind.id}}_value?({{param.id}}, code)
-      if with_dev(fetch_{{kind.id}}_value, {{param.id}}, code, out value) == 0
-        value
-      else
-        nil
-      end
+  def event_value?(code : Codes::All)
+    if with_dev(fetch_event_value, *pair(code), out value) == 0
+      value
+    else
+      nil
     end
+  end
 
-    def {{kind.id}}_value!({{param.id}}, code)
-      if value = {{kind.id}}_value?({{param.id}}, code)
-        value
-      else
-        raise Error.new("Device does not support {{kind.id}} #{{{param.id}}} #{code}")
-      end
+  def event_value!(code : Codes::All)
+    if value = event_value?(code)
+      value
+    else
+      raise Error.new("Device does not support event #{code.type} #{code}")
     end
+  end
 
-    def set_{{kind.id}}_value({{param.id}}, code, value)
-      try(set_{{kind.id}}_value, "Unable to set {{kind.id}} #{{{param.id}}} #{code} to #{value}", {{param.id}}, code, value)
+  def set_event_value(code : Codes::All, value)
+    try(set_event_value, "Unable to set event #{code.type} #{code} to #{value}", *pair(code), value)
+  end
+
+  def slot_value?(slot, code : Codes::Abs)
+    if with_dev(fetch_slot_value, slot, code, out value) == 0
+      value
+    else
+      nil
     end
-  {% end %}
+  end
+
+  def slot_value!(slot, code : Codes::Abs)
+    if value = slot_value?(code)
+      value
+    else
+      raise Error.new("Device does not support slot #{slot} #{code}")
+    end
+  end
+
+  def set_slot_value(slot, code : Codes::Abs, value)
+    try(set_slot_value, "Unable to set slot #{slot} #{code} to #{value}", slot, code, value)
+  end
 
   def num_slots
     with_dev(get_num_slots)
@@ -165,6 +194,10 @@ class Evdev::Device
     else
       LibEvdev::ReadStatus.new(val)
     end
+  end
+
+  private macro pair(code)
+    {code.type, code}
   end
 
   private macro with_dev(method, *args)
