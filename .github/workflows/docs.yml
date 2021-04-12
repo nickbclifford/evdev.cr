@@ -1,0 +1,24 @@
+name: Publish documentation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  docs:
+    name: Build and publish docs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Crystal
+        uses: oprypin/install-crystal@v1
+        with:
+          crystal: latest
+      - name: Build docs
+        run: crystal docs
+      - name: Publish to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: gh-pages
+          folder: docs
