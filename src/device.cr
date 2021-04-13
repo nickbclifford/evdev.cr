@@ -58,7 +58,7 @@ class Evdev::Device
     end
 
     def {{method.id}}=(new_val)
-      with_dev(set_id_{{name.id}})
+      with_dev(set_id_{{name.id}}, new_val)
     end
   {% end %}
 
