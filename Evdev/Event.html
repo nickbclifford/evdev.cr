@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="evdev">
-  <title>Evdev::UinputDevice - evdev main</title>
+  <title>Evdev::Event - evdev main</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -136,7 +136,7 @@
       
     </li>
   
-  <li class=" " data-id="evdev/Evdev/Event" data-name="evdev::event">
+  <li class=" current" data-id="evdev/Evdev/Event" data-name="evdev::event">
       <a href="../Evdev/Event.html">Event</a>
       
     </li>
@@ -151,7 +151,7 @@
       
     </li>
   
-  <li class=" current" data-id="evdev/Evdev/UinputDevice" data-name="evdev::uinputdevice">
+  <li class=" " data-id="evdev/Evdev/UinputDevice" data-name="evdev::uinputdevice">
       <a href="../Evdev/UinputDevice.html">UinputDevice</a>
       
     </li>
@@ -170,12 +170,12 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Evdev::UinputDevice
+  <span class="kind">struct</span> Evdev::Event
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Evdev/UinputDevice.html">Evdev::UinputDevice</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Evdev/Event.html">Evdev::Event</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
 
 
 
@@ -203,8 +203,8 @@
   </h2>
   
     
-      <a href="https://github.com/nickbclifford/evdev.cr/blob/05a141d25b35a80562ef85d0b082abcc06c80e73/src/uinput_device.cr#L6" target="_blank">
-        uinput_device.cr
+      <a href="https://github.com/nickbclifford/evdev.cr/blob/05a141d25b35a80562ef85d0b082abcc06c80e73/src/event.cr#L4" target="_blank">
+        event.cr
       </a>
     
     <br/>
@@ -225,9 +225,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(device:Device,file:IO::FileDescriptor?=nil)-class-method" class="signature"><strong>.new</strong>(device : Device, file : IO::FileDescriptor? = <span class="n">nil</span>)</a>
-        
-          <div class="summary"><p>Creates a new uinput device from a <code><a href="../Evdev/Device.html">Device</a></code> and an open file handle to <code>/dev/uinput</code>.</p></div>
+        <a href="#new(time:Time,code:Evdev::Codes::All,value:Int32)-class-method" class="signature"><strong>.new</strong>(time : Time, code : Evdev::Codes::All, value : Int32)</a>
         
       </li>
     
@@ -248,27 +246,27 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#device_node-instance-method" class="signature"><strong>#device_node</strong></a>
+        <a href="#clone-instance-method" class="signature"><strong>#clone</strong></a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#fd-instance-method" class="signature"><strong>#fd</strong></a>
+        <a href="#code:Evdev::Codes::All-instance-method" class="signature"><strong>#code</strong> : Evdev::Codes::All</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#finalize-instance-method" class="signature"><strong>#finalize</strong></a>
+        <a href="#copy_with(time_time=@time,code_code=@code,value_value=@value)-instance-method" class="signature"><strong>#copy_with</strong>(time _time = @time, code _code = @code, value _value = @value)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#syspath-instance-method" class="signature"><strong>#syspath</strong></a>
+        <a href="#time:Time-instance-method" class="signature"><strong>#time</strong> : Time</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#write_event(code:Codes::All,value)-instance-method" class="signature"><strong>#write_event</strong>(code : Codes::All, value)</a>
+        <a href="#value:Int32-instance-method" class="signature"><strong>#value</strong> : Int32</a>
         
       </li>
     
@@ -279,6 +277,16 @@
 
 
 <div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
   
     
 
@@ -312,24 +320,18 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(device:Device,file:IO::FileDescriptor?=nil)-class-method">
+    <div class="entry-detail" id="new(time:Time,code:Evdev::Codes::All,value:Int32)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(device : <a href="../Evdev/Device.html">Device</a>, file : IO::FileDescriptor? = <span class="n">nil</span>)
+        def self.<strong>new</strong>(time : Time, code : <a href="../Evdev/Codes/All.html">Evdev::Codes::All</a>, value : Int32)
 
-        <a class="method-permalink" href="#new(device:Device,file:IO::FileDescriptor?=nil)-class-method">#</a>
+        <a class="method-permalink" href="#new(time:Time,code:Evdev::Codes::All,value:Int32)-class-method">#</a>
       </div>
-      
-        <div class="doc">
-          
-          <p>Creates a new uinput device from a <code><a href="../Evdev/Device.html">Device</a></code> and an open file handle to <code>/dev/uinput</code>.
-If <code>file</code> is <code>nil</code>, libevdev will automatically create and manage its own uinput handle.</p>
-        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/nickbclifford/evdev.cr/blob/05a141d25b35a80562ef85d0b082abcc06c80e73/src/uinput_device.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/05a141d25b35a80562ef85d0b082abcc06c80e73/src/event.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -348,82 +350,76 @@ If <code>file</code> is <code>nil</code>, libevdev will automatically create and
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="device_node-instance-method">
+    <div class="entry-detail" id="clone-instance-method">
       <div class="signature">
         
-        def <strong>device_node</strong>
+        def <strong>clone</strong>
 
-        <a class="method-permalink" href="#device_node-instance-method">#</a>
+        <a class="method-permalink" href="#clone-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/nickbclifford/evdev.cr/blob/05a141d25b35a80562ef85d0b082abcc06c80e73/src/uinput_device.cr#L29" target="_blank">View source</a>]
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/05a141d25b35a80562ef85d0b082abcc06c80e73/src/event.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="fd-instance-method">
+    <div class="entry-detail" id="code:Evdev::Codes::All-instance-method">
       <div class="signature">
         
-        def <strong>fd</strong>
+        def <strong>code</strong> : <a href="../Evdev/Codes/All.html">Evdev::Codes::All</a>
 
-        <a class="method-permalink" href="#fd-instance-method">#</a>
+        <a class="method-permalink" href="#code:Evdev::Codes::All-instance-method">#</a>
       </div>
       
       <br/>
       <div>
-        
-          [<a href="https://github.com/nickbclifford/evdev.cr/blob/05a141d25b35a80562ef85d0b082abcc06c80e73/src/uinput_device.cr#L21" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="finalize-instance-method">
+    <div class="entry-detail" id="copy_with(time_time=@time,code_code=@code,value_value=@value)-instance-method">
       <div class="signature">
         
-        def <strong>finalize</strong>
+        def <strong>copy_with</strong>(time _time = @time, code _code = @code, value _value = @value)
 
-        <a class="method-permalink" href="#finalize-instance-method">#</a>
+        <a class="method-permalink" href="#copy_with(time_time=@time,code_code=@code,value_value=@value)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/nickbclifford/evdev.cr/blob/05a141d25b35a80562ef85d0b082abcc06c80e73/src/uinput_device.cr#L17" target="_blank">View source</a>]
+          [<a href="https://github.com/nickbclifford/evdev.cr/blob/05a141d25b35a80562ef85d0b082abcc06c80e73/src/event.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="syspath-instance-method">
+    <div class="entry-detail" id="time:Time-instance-method">
       <div class="signature">
         
-        def <strong>syspath</strong>
+        def <strong>time</strong> : Time
 
-        <a class="method-permalink" href="#syspath-instance-method">#</a>
+        <a class="method-permalink" href="#time:Time-instance-method">#</a>
       </div>
       
       <br/>
       <div>
-        
-          [<a href="https://github.com/nickbclifford/evdev.cr/blob/05a141d25b35a80562ef85d0b082abcc06c80e73/src/uinput_device.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="write_event(code:Codes::All,value)-instance-method">
+    <div class="entry-detail" id="value:Int32-instance-method">
       <div class="signature">
         
-        def <strong>write_event</strong>(code : <a href="../Evdev/Codes/All.html">Codes::All</a>, value)
+        def <strong>value</strong> : Int32
 
-        <a class="method-permalink" href="#write_event(code:Codes::All,value)-instance-method">#</a>
+        <a class="method-permalink" href="#value:Int32-instance-method">#</a>
       </div>
       
       <br/>
       <div>
-        
-          [<a href="https://github.com/nickbclifford/evdev.cr/blob/05a141d25b35a80562ef85d0b082abcc06c80e73/src/uinput_device.cr#L33" target="_blank">View source</a>]
         
       </div>
     </div>
