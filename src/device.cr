@@ -194,7 +194,7 @@ class Evdev::Device
     if (val = with_dev(next_event, flags, out event)) < 0
       raise Error.from_errno
     else
-      LibEvdev::ReadStatus.new(val)
+      {event, LibEvdev::ReadStatus.new(val)}
     end
   end
 
