@@ -21,14 +21,14 @@ lib LibEvdev
   end
 
   enum ReadFlags
-    Sync = 1
-    Normal = 2
+    Sync      = 1
+    Normal    = 2
     ForceSync = 4
-    Blocking = 8
+    Blocking  = 8
   end
   enum ReadStatus
     Success = 0
-    Sync = 1
+    Sync    = 1
   end
 
   fun change_fd = libevdev_change_fd(dev : Device, fd : LibC::Int) : LibC::Int
