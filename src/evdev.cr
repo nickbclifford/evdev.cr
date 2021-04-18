@@ -1,6 +1,7 @@
 require "./device"
 require "./enums"
 require "./error"
+require "./event"
 require "./uinput_device"
 
 module Evdev

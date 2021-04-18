@@ -1,6 +1,7 @@
 require "errno"
 require "./enums"
 require "./error"
+require "./event"
 require "./libevdev"
 
 class Evdev::Device
@@ -194,7 +195,7 @@ class Evdev::Device
     if (val = with_dev(next_event, flags, out event)) < 0
       raise Error.from_errno
     else
-      {event, LibEvdev::ReadStatus.new(val)}
+      {Event.from_lib(event), LibEvdev::ReadStatus.new(val)}
     end
   end
 

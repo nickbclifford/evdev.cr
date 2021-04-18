@@ -27,6 +27,20 @@ module Evdev
   module Codes
     macro finished
       alias All = Union({{*@type.constants}})
+
+      {% for name in @type.constants %}
+        enum {{name}}
+          def type
+            EventType::{{name}}
+          end
+        end
+      {% end %}
+
+      TYPES = {
+        {% for name in @type.constants %}
+          EventType::{{name}} => {{name}},
+        {% end %}
+      }
     end
 
     # Auto-generated from linux/input.h and linux/input-event-codes.h
@@ -36,10 +50,6 @@ module Evdev
       Config   = 1
       MtReport = 2
       Dropped  = 3
-
-      def type
-        EventType::Syn
-      end
     end
 
     # Enum members cannot start with a number, so any members that otherwise would have Key prepended.
@@ -656,10 +666,6 @@ module Evdev
       BtnTriggerHappy38       = 0x2e5
       BtnTriggerHappy39       = 0x2e6
       BtnTriggerHappy40       = 0x2e7
-
-      def type
-        EventType::Key
-      end
     end
 
     enum Rel
@@ -676,10 +682,6 @@ module Evdev
       Reserved    = 0x0a
       WheelHiRes  = 0x0b
       HwheelHiRes = 0x0c
-
-      def type
-        EventType::Rel
-      end
     end
 
     enum Abs
@@ -725,10 +727,6 @@ module Evdev
       MtDistance    = 0x3b
       MtToolX       = 0x3c
       MtToolY       = 0x3d
-
-      def type
-        EventType::Abs
-      end
     end
 
     enum Sw
@@ -750,10 +748,6 @@ module Evdev
       MuteDevice         = 0x0e
       PenInserted        = 0x0f
       MachineCover       = 0x10
-
-      def type
-        EventType::Sw
-      end
     end
 
     enum Msc
@@ -763,10 +757,6 @@ module Evdev
       Raw       = 0x03
       Scan      = 0x04
       Timestamp = 0x05
-
-      def type
-        EventType::Msc
-      end
     end
 
     enum Led
@@ -781,29 +771,17 @@ module Evdev
       Misc     = 0x08
       Mail     = 0x09
       Charging = 0x0a
-
-      def type
-        EventType::Led
-      end
     end
 
     enum Rep
       Delay  = 0x00
       Period = 0x01
-
-      def type
-        EventType::Rep
-      end
     end
 
     enum Snd
       Click = 0x00
       Bell  = 0x01
       Tone  = 0x02
-
-      def type
-        EventType::Snd
-      end
     end
 
     enum Ff
@@ -823,19 +801,11 @@ module Evdev
       Custom     = 0x5d
       Gain       = 0x60
       Autocenter = 0x61
-
-      def type
-        EventType::Ff
-      end
     end
 
     enum FfStatus
       Stopped = 0x00
       Playing = 0x01
-
-      def type
-        EventType::FfStatus
-      end
     end
   end
 end
